@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: capitalize;
+  background: linear-gradient(135deg, #0079bf, #5067c5);
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.board {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.column {
+  width: 32%;
+  min-height: 95vh;
+  padding: 10px;
+  background-color: #ebecf0;
+  border-radius: 8px;
+}
+
+.title {
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.content {
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  text-transform: none;
+  box-shadow: 0 1px 0 rgb(9 30 66 / 25%);
+}
+
+.hint {
+  position: absolute;
+  padding: 4px 10px;
+  color: red;
+}
+
+.hint-active {
+	background: #ffffff;
+  border: 1px solid #ff0000;
+  border-radius: 8px;
+}
+.hint-active:after, .hint-active:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.hint-active:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.hint-active:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #ff0000;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+.button {
+  cursor: pointer;
+  border-style: none;
+  font-size: 1rem;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.button-add::before {
+  content: "+";
+  margin-right: 5px;
+  font-size: 1.5rem;
+}
+
+.form-message {
+  resize: none;
+  padding: 5px 10px;
+  width: 100%;
+  min-height: 50px;
+  box-sizing: border-box;
+}
+
+.form-controls {
+  display: flex;
+}
+
+.button-form {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background-color: #32cd32;	
+}
+
+.button-form-cancel {
+  border-style: none;
+  background-color: inherit;
+  margin-left: 10px;
+}
+
+.button-form:hover {
+  background-color: rgb(222, 222, 222);
+}
+
+.button-card-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  color: inherit;
+}
+
+.button-card-deleteConfirm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  background-color: red;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.card:hover .button-card-delete {
+  display: block;
+}
+
+.dragged {
+  transform: rotate(-3deg);
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.dragged:active {
+  cursor: grabbing;
+}
+
+.test {
+  background-color: #b3b3b3;
+  color:  #b3b3b3;
+}
