@@ -264,7 +264,6 @@ class ToDoBoard {
   saveDragElPosition() {
     this.parent = this.dragEl.closest(".content");
     this.sibling = this.dragEl.nextElementSibling;
-    this.parent.removeChild(this.dragEl);
   }
   mouseMove(e) {
     if (!this.dragEl) {
@@ -286,6 +285,7 @@ class ToDoBoard {
     }
     if (e.target.closest(".content")) {
       this.testEl.classList.remove("test");
+      this.parent.removeChild(this.dragEl);
       this.saveCards();
     } else {
       this.testEl.closest(".content").removeChild(this.testEl);
